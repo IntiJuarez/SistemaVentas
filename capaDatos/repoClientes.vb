@@ -1,11 +1,11 @@
 ﻿Imports System.Configuration
 Imports System.Data.SqlClient
-Public Class repoCliente
+Public Class repoClientes
     Private connectionString As String = ConfigurationManager.ConnectionStrings("conexionDB").ConnectionString
 
-    Public Function obtenerClientes() As List(Of Cliente)
+    Public Function obtenerClientes() As List(Of Clientes)
 
-        Dim listaClientes As New List(Of Cliente)
+        Dim listaClientes As New List(Of Clientes)
 
         Using con As New SqlConnection(connectionString)
             Dim consulta As String = "SELECT * FROM clientes"
@@ -14,7 +14,7 @@ Public Class repoCliente
             Dim lector As SqlDataReader = comando.ExecuteReader()
 
             While lector.Read()
-                Dim cliente As New Cliente With {
+                Dim cliente As New Clientes With {
                     .ID = Convert.ToInt32(lector("ID")),
                     .Nombre = lector("Cliente").ToString(),
                     .Telefono = lector("Telefono").ToString(),
@@ -28,7 +28,7 @@ Public Class repoCliente
     End Function
 
 
-    Public Sub insertarCliente(cliente As Cliente)
+    Public Sub insertarCliente(cliente As Clientes)
 
         Using con As New SqlConnection(connectionString)
             Dim consulta As String = "INSERT INTO clientes (Cliente, Telefono, Correo) VALUES (@Nombre, @Telefono, @Correo)"
@@ -41,7 +41,7 @@ Public Class repoCliente
         End Using
     End Sub
 
-    Public Sub actualizarCliente(cliente As Cliente)
+    Public Sub actualizarCliente(cliente As Clientes)
         Using con As New SqlConnection(connectionString)
             Dim consulta As String = "UPDATE clientes SET Cliente = @Nombre, @Telefono = Telefono, @Correo = Correo WHERE ID = @ID"
             Dim comando As New SqlCommand(consulta, con)

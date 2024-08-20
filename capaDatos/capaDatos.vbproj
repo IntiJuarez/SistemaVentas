@@ -68,11 +68,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entidades\Cliente.vb" />
-    <Compile Include="Entidades\Producto.vb" />
-    <Compile Include="Entidades\Venta.vb" />
+    <Compile Include="Entidades\Clientes.vb" />
+    <Compile Include="Entidades\Productos.vb" />
+    <Compile Include="Entidades\Ventas.vb" />
     <Compile Include="Entidades\VentasItems.vb" />
-    <Compile Include="repoCliente.vb" />
+    <Compile Include="repoClientes.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

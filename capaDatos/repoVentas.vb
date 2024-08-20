@@ -4,8 +4,8 @@ Imports System.Data.SqlClient
 Public Class repoVentas
     'conexión a la bd'
     Private connectionString As String = ConfigurationManager.ConnectionStrings("conexionDB").ConnectionString
-    Public Function obtenerVentas() As List(Of Venta)
-        Dim listaVentas As New List(Of Venta)
+    Public Function obtenerVentas() As List(Of Ventas)
+        Dim listaVentas As New List(Of Ventas)
 
         Using con As New SqlConnection(connectionString)
 
@@ -16,7 +16,7 @@ Public Class repoVentas
             Dim lector As SqlDataReader = comando.ExecuteReader()
             'bucle'
             While lector.Read()
-                Dim venta As New Venta() With {
+                Dim venta As New Ventas() With {
                 .ID = Convert.ToInt32(lector("ID")),
                 .IDCliente = Convert.ToInt32(lector("IDCliente")),
                 .Fecha = Convert.ToDateTime(lector("Fecha")),
@@ -29,7 +29,7 @@ Public Class repoVentas
         End Using
     End Function
 
-    Public Sub insertarVenta(venta As Venta)
+    Public Sub insertarVenta(venta As Ventas)
         Using con As New SqlConnection(connectionString)
             Dim consulta As String = "INSERT INTO ventas (IDCliente, Fecha, Total) VALUES (@IDCliente, @Fecha, @Total)"
             Dim comando As New SqlCommand(consulta, con)
@@ -41,7 +41,7 @@ Public Class repoVentas
         End Using
     End Sub
 
-    Public Sub actualizarVenta(venta As Venta)
+    Public Sub actualizarVenta(venta As Ventas)
         Using con As New SqlConnection(connectionString)
             Dim consulta As String = "UPDATE ventas SET IDCliente = @IDCliente, Fecha = @Fecha, Total = @Total WHERE ID = @ID"
             Dim comando As New SqlCommand(consulta, con)

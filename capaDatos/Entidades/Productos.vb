@@ -1,4 +1,4 @@
-﻿Public Class Producto
+﻿Public Class Productos
     Public Property ID As Integer
     Public Property Nombre As String
     Public Property Precio As Double

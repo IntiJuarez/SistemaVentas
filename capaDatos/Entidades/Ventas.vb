@@ -1,4 +1,4 @@
-﻿Public Class Venta
+﻿Public Class Ventas
     Public Property ID As Integer
     Public Property IDCliente As Integer
     Public Property Fecha As DateTime

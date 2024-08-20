@@ -1,18 +1,18 @@
 ﻿Imports capaDatos
 Public Class servicioCliente
 
-    Private repositorio As New repoCliente()
+    Private repositorio As New repoClientes()
 
-    Public Function obtenerDatos() As List(Of Cliente)
+    Public Function obtenerDatos() As List(Of Clientes)
         Return repositorio.obtenerClientes
     End Function
 
     Public Function clienteExiste(nombreCliente As String) As Boolean
-        Dim clientes As List(Of Cliente) = repositorio.obtenerClientes()
+        Dim clientes As List(Of Clientes) = repositorio.obtenerClientes()
         Return clientes.Any(Function(c) c.Nombre = nombreCliente)
     End Function
 
-    Public Sub guardar(cliente As Cliente)
+    Public Sub guardar(cliente As Clientes)
         'validación'
         If clienteExiste(cliente.Nombre) Then
             Throw New Exception("Cliente existente")

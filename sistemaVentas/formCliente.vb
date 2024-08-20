@@ -9,7 +9,7 @@ Public Class formCliente
     End Sub
     Private Sub btnCrear_Click(sender As Object, e As EventArgs) Handles btnCrear.Click
         Try
-            Dim nuevoCliente As New Cliente() With {
+            Dim nuevoCliente As New Clientes() With {
             .Nombre = txtCliente.Text,
             .Telefono = txtTelefono.Text,
             .Correo = txtCorreo.Text
