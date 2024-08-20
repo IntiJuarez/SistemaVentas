@@ -1,7 +1,7 @@
 ﻿Imports capaDatos
 Public Class servicioProducto
 
-    Private repositorio As repoProductos
+    Private repositorio As New repoProductos()
     Public Function obtenerTodo() As List(Of Producto)
         Return repositorio.obtenerProductos
     End Function
