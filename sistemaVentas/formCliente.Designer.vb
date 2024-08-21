@@ -26,17 +26,18 @@ Partial Class formCliente
         Me.ClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtCliente = New System.Windows.Forms.TextBox()
-        Me.txtTelefono = New System.Windows.Forms.TextBox()
-        Me.txtCorreo = New System.Windows.Forms.TextBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
-        Me.dgvCliente = New System.Windows.Forms.DataGridView()
         Me.btnCrear = New System.Windows.Forms.Button()
+        Me.txtCorreo = New System.Windows.Forms.TextBox()
+        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.txtCliente = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.dgvCliente = New System.Windows.Forms.DataGridView()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -80,23 +81,35 @@ Partial Class formCliente
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos "
         '
-        'Label1
+        'btnCrear
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(39, 29)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Cliente"
+        Me.btnCrear.Location = New System.Drawing.Point(327, 87)
+        Me.btnCrear.Name = "btnCrear"
+        Me.btnCrear.Size = New System.Drawing.Size(70, 20)
+        Me.btnCrear.TabIndex = 6
+        Me.btnCrear.Text = "Crear"
+        Me.btnCrear.UseVisualStyleBackColor = True
         '
-        'Label2
+        'txtCorreo
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(272, 29)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Teléfono"
+        Me.txtCorreo.Location = New System.Drawing.Point(84, 87)
+        Me.txtCorreo.Name = "txtCorreo"
+        Me.txtCorreo.Size = New System.Drawing.Size(142, 20)
+        Me.txtCorreo.TabIndex = 5
+        '
+        'txtTelefono
+        '
+        Me.txtTelefono.Location = New System.Drawing.Point(327, 29)
+        Me.txtTelefono.Name = "txtTelefono"
+        Me.txtTelefono.Size = New System.Drawing.Size(142, 20)
+        Me.txtTelefono.TabIndex = 4
+        '
+        'txtCliente
+        '
+        Me.txtCliente.Location = New System.Drawing.Point(84, 29)
+        Me.txtCliente.Name = "txtCliente"
+        Me.txtCliente.Size = New System.Drawing.Size(142, 20)
+        Me.txtCliente.TabIndex = 3
         '
         'Label3
         '
@@ -107,29 +120,27 @@ Partial Class formCliente
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Correo"
         '
-        'txtCliente
+        'Label2
         '
-        Me.txtCliente.Location = New System.Drawing.Point(84, 29)
-        Me.txtCliente.Name = "txtCliente"
-        Me.txtCliente.Size = New System.Drawing.Size(142, 20)
-        Me.txtCliente.TabIndex = 3
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(272, 29)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Teléfono"
         '
-        'txtTelefono
+        'Label1
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(327, 29)
-        Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(142, 20)
-        Me.txtTelefono.TabIndex = 4
-        '
-        'txtCorreo
-        '
-        Me.txtCorreo.Location = New System.Drawing.Point(84, 87)
-        Me.txtCorreo.Name = "txtCorreo"
-        Me.txtCorreo.Size = New System.Drawing.Size(142, 20)
-        Me.txtCorreo.TabIndex = 5
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(39, 29)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Cliente"
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.btnBuscar)
         Me.GroupBox2.Controls.Add(Me.txtBuscar)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 190)
@@ -138,6 +149,13 @@ Partial Class formCliente
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "GroupBox2"
+        '
+        'txtBuscar
+        '
+        Me.txtBuscar.Location = New System.Drawing.Point(84, 32)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(213, 20)
+        Me.txtBuscar.TabIndex = 1
         '
         'Label4
         '
@@ -148,13 +166,6 @@ Partial Class formCliente
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Buscar"
         '
-        'txtBuscar
-        '
-        Me.txtBuscar.Location = New System.Drawing.Point(84, 32)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(213, 20)
-        Me.txtBuscar.TabIndex = 1
-        '
         'dgvCliente
         '
         Me.dgvCliente.AllowUserToAddRows = False
@@ -163,17 +174,17 @@ Partial Class formCliente
         Me.dgvCliente.Location = New System.Drawing.Point(12, 295)
         Me.dgvCliente.Name = "dgvCliente"
         Me.dgvCliente.ReadOnly = True
-        Me.dgvCliente.Size = New System.Drawing.Size(485, 199)
+        Me.dgvCliente.Size = New System.Drawing.Size(552, 199)
         Me.dgvCliente.TabIndex = 3
         '
-        'btnCrear
+        'btnBuscar
         '
-        Me.btnCrear.Location = New System.Drawing.Point(327, 87)
-        Me.btnCrear.Name = "btnCrear"
-        Me.btnCrear.Size = New System.Drawing.Size(70, 20)
-        Me.btnCrear.TabIndex = 6
-        Me.btnCrear.Text = "Crear"
-        Me.btnCrear.UseVisualStyleBackColor = True
+        Me.btnBuscar.Location = New System.Drawing.Point(327, 28)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscar.TabIndex = 2
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'formCliente
         '
@@ -213,4 +224,5 @@ Partial Class formCliente
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents dgvCliente As DataGridView
+    Friend WithEvents btnBuscar As Button
 End Class

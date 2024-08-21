@@ -3,7 +3,7 @@ Imports System.Data.SqlClient
 
 Public Class repoVentas
     'conexión a la bd'
-    Private connectionString As String = ConfigurationManager.ConnectionStrings("conexionDB").ConnectionString
+    Private connectionString As String = ConfigurationManager.ConnectionStrings("conexionBD").ConnectionString
     Public Function obtenerVentas() As List(Of Ventas)
         Dim listaVentas As New List(Of Ventas)
 
@@ -29,17 +29,30 @@ Public Class repoVentas
         End Using
     End Function
 
-    Public Sub insertarVenta(venta As Ventas)
+    Public Function insertarVenta(Venta As Ventas)
         Using con As New SqlConnection(connectionString)
-            Dim consulta As String = "INSERT INTO ventas (IDCliente, Fecha, Total) VALUES (@IDCliente, @Fecha, @Total)"
+            Dim consulta As String = "INSERT INTO ventas (IDCliente, Fecha, Total) OUTPUT INSERTED.ID VALUES (@IDCliente, @Fecha, @Total)"
             Dim comando As New SqlCommand(consulta, con)
-            comando.Parameters.AddWithValue("@IDCliente", venta.IDCliente)
-            comando.Parameters.AddWithValue("@Fecha", venta.Fecha)
-            comando.Parameters.AddWithValue("@Total", venta.Total)
+            comando.Parameters.AddWithValue("@IDCliente", Venta.IDCliente)
+            comando.Parameters.AddWithValue("@Fecha", Venta.Fecha)
+            comando.Parameters.AddWithValue("@Total", Venta.Total)
             con.Open()
-            comando.ExecuteNonQuery()
+            Return Convert.ToInt32(comando.ExecuteScalar())
         End Using
-    End Sub
+    End Function
+
+
+    'Public Sub insertarVenta(venta As Ventas)
+    '    Using con As New SqlConnection(connectionString)
+    '        Dim consulta As String = "INSERT INTO ventas (IDCliente, Fecha, Total) VALUES (@IDCliente, @Fecha, @Total)"
+    '        Dim comando As New SqlCommand(consulta, con)
+    '        comando.Parameters.AddWithValue("@IDCliente", venta.IDCliente)
+    '        comando.Parameters.AddWithValue("@Fecha", venta.Fecha)
+    '        comando.Parameters.AddWithValue("@Total", venta.Total)
+    '        con.Open()
+    '        comando.ExecuteNonQuery()
+    '    End Using
+    'End Sub
 
     Public Sub actualizarVenta(venta As Ventas)
         Using con As New SqlConnection(connectionString)

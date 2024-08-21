@@ -9,21 +9,34 @@ Public Class servicioCliente
 
     Public Function clienteExiste(nombreCliente As String) As Boolean
         Dim clientes As List(Of Clientes) = repositorio.obtenerClientes()
-        Return clientes.Any(Function(c) c.Nombre = nombreCliente)
+        Return clientes.Any(Function(c) c.Cliente = nombreCliente)
     End Function
+
+
 
     Public Sub guardar(cliente As Clientes)
         'validación'
-        If clienteExiste(cliente.Nombre) Then
+        If clienteExiste(cliente.Cliente) Then
             Throw New Exception("Cliente existente")
         End If
 
         If cliente.ID = 0 Then
             repositorio.insertarCliente(cliente)
-        Else
-            repositorio.actualizarCliente(cliente)
         End If
     End Sub
+
+    Public Sub modificar(cliente As Clientes)
+
+    End Sub
+
+
+    Public Function buscarClientes(filtro As String) As List(Of Clientes)
+        If String.IsNullOrEmpty(filtro) Then
+            Throw New ArgumentException("Error. Filtro de búsqueda vacío.")
+        End If
+
+        Return repositorio.buscarClientes(filtro)
+    End Function
 
     Public Sub eliminar(id As Integer)
         repositorio.eliminarCliente(id)

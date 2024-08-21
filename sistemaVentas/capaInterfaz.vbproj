@@ -80,10 +80,35 @@
       <DependentUpon>formCliente.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="formPrincipal.Designer.vb">
+      <DependentUpon>formPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formProducto.Designer.vb">
+      <DependentUpon>formProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formVenta.Designer.vb">
+      <DependentUpon>formVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formVentaItems.Designer.vb">
+      <DependentUpon>formVentaItems.vb</DependentUpon>
+    </Compile>
+    <Compile Include="formVentaItems.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -99,6 +124,15 @@
   <ItemGroup>
     <EmbeddedResource Include="formCliente.resx">
       <DependentUpon>formCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPrincipal.resx">
+      <DependentUpon>formPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formProducto.resx">
+      <DependentUpon>formProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formVenta.resx">
+      <DependentUpon>formVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

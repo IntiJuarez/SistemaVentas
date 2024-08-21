@@ -2,7 +2,7 @@
 Imports System.Data.SqlClient
 Public Class repoProductos
 
-    Private connectionString As String = ConfigurationManager.ConnectionStrings("conexionDB").ConnectionString
+    Private connectionString As String = ConfigurationManager.ConnectionStrings("conexionBD").ConnectionString
 
     Public Function obtenerProductos() As List(Of Productos)
         Dim listaProductos As New List(Of Productos)
@@ -28,11 +28,11 @@ Public Class repoProductos
         Return listaProductos
     End Function
 
-    Public Function buscarProducto(filtro As String) As List(Of Productos)
+    Public Function buscarProductos(filtro As String) As List(Of Productos)
         Dim listaProductos As New List(Of Productos)
 
         Using con As New SqlConnection(connectionString)
-            Dim consulta As String = "SELECT * FROM productos WHERE Nombre LIKE @Nombre"
+            Dim consulta As String = "SELECT * FROM productos WHERE @filtro LIKE @Nombre OR Categoria LIKE @filtro"
             Dim comando As New SqlCommand(consulta, con)
             comando.Parameters.AddWithValue("@filtro", "%" & filtro & "%")
             con.Open()

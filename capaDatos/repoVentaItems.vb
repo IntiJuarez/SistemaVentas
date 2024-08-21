@@ -2,7 +2,7 @@
 Imports System.Data.SqlClient
 Public Class repoVentaItems
 
-    Private connectionString As String = ConfigurationManager.ConnectionStrings("conexionDB").ConnectionString
+    Private connectionString As String = ConfigurationManager.ConnectionStrings("conexionBD").ConnectionString
 
     Public Function obtenerItems() As List(Of VentasItems)
         Dim listaItems As New List(Of VentasItems)
