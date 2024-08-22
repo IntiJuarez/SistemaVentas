@@ -32,7 +32,7 @@ Public Class repoProductos
         Dim listaProductos As New List(Of Productos)
 
         Using con As New SqlConnection(connectionString)
-            Dim consulta As String = "SELECT * FROM productos WHERE @filtro LIKE @Nombre OR Categoria LIKE @filtro"
+            Dim consulta As String = "SELECT * FROM productos WHERE Nombre LIKE @filtro OR Categoria LIKE @filtro"
             Dim comando As New SqlCommand(consulta, con)
             comando.Parameters.AddWithValue("@filtro", "%" & filtro & "%")
             con.Open()

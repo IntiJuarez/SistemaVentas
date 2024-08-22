@@ -23,21 +23,21 @@ Partial Class formProducto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtProducto = New System.Windows.Forms.TextBox()
-        Me.txtPrecio = New System.Windows.Forms.TextBox()
-        Me.txtCategoría = New System.Windows.Forms.TextBox()
         Me.btnCrear = New System.Windows.Forms.Button()
+        Me.txtCategoría = New System.Windows.Forms.TextBox()
+        Me.txtPrecio = New System.Windows.Forms.TextBox()
+        Me.txtProducto = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.dgvCliente = New System.Windows.Forms.DataGridView()
+        Me.txtBuscar = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.dgvProductos = New System.Windows.Forms.DataGridView()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.dgvCliente, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -54,25 +54,37 @@ Partial Class formProducto
         Me.GroupBox1.Size = New System.Drawing.Size(485, 148)
         Me.GroupBox1.TabIndex = 4
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos "
+        Me.GroupBox1.Text = "Productos"
         '
-        'Label1
+        'btnCrear
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(28, 32)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(44, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nombre"
+        Me.btnCrear.Location = New System.Drawing.Point(327, 87)
+        Me.btnCrear.Name = "btnCrear"
+        Me.btnCrear.Size = New System.Drawing.Size(70, 20)
+        Me.btnCrear.TabIndex = 6
+        Me.btnCrear.Text = "Crear"
+        Me.btnCrear.UseVisualStyleBackColor = True
         '
-        'Label2
+        'txtCategoría
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(284, 32)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(37, 13)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Precio"
+        Me.txtCategoría.Location = New System.Drawing.Point(84, 87)
+        Me.txtCategoría.Name = "txtCategoría"
+        Me.txtCategoría.Size = New System.Drawing.Size(142, 20)
+        Me.txtCategoría.TabIndex = 5
+        '
+        'txtPrecio
+        '
+        Me.txtPrecio.Location = New System.Drawing.Point(327, 29)
+        Me.txtPrecio.Name = "txtPrecio"
+        Me.txtPrecio.Size = New System.Drawing.Size(75, 20)
+        Me.txtPrecio.TabIndex = 4
+        '
+        'txtProducto
+        '
+        Me.txtProducto.Location = New System.Drawing.Point(84, 29)
+        Me.txtProducto.Name = "txtProducto"
+        Me.txtProducto.Size = New System.Drawing.Size(142, 20)
+        Me.txtProducto.TabIndex = 3
         '
         'Label3
         '
@@ -83,35 +95,23 @@ Partial Class formProducto
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Categoría"
         '
-        'txtProducto
+        'Label2
         '
-        Me.txtProducto.Location = New System.Drawing.Point(84, 29)
-        Me.txtProducto.Name = "txtProducto"
-        Me.txtProducto.Size = New System.Drawing.Size(142, 20)
-        Me.txtProducto.TabIndex = 3
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(284, 32)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(37, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Precio"
         '
-        'txtPrecio
+        'Label1
         '
-        Me.txtPrecio.Location = New System.Drawing.Point(327, 29)
-        Me.txtPrecio.Name = "txtPrecio"
-        Me.txtPrecio.Size = New System.Drawing.Size(75, 20)
-        Me.txtPrecio.TabIndex = 4
-        '
-        'txtCategoría
-        '
-        Me.txtCategoría.Location = New System.Drawing.Point(84, 87)
-        Me.txtCategoría.Name = "txtCategoría"
-        Me.txtCategoría.Size = New System.Drawing.Size(142, 20)
-        Me.txtCategoría.TabIndex = 5
-        '
-        'btnCrear
-        '
-        Me.btnCrear.Location = New System.Drawing.Point(327, 87)
-        Me.btnCrear.Name = "btnCrear"
-        Me.btnCrear.Size = New System.Drawing.Size(70, 20)
-        Me.btnCrear.TabIndex = 6
-        Me.btnCrear.Text = "Crear"
-        Me.btnCrear.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(28, 32)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(44, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Nombre"
         '
         'GroupBox2
         '
@@ -125,22 +125,6 @@ Partial Class formProducto
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "GroupBox2"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(31, 32)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Buscar"
-        '
-        'txtBuscar
-        '
-        Me.txtBuscar.Location = New System.Drawing.Point(84, 32)
-        Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(213, 20)
-        Me.txtBuscar.TabIndex = 1
-        '
         'btnBuscar
         '
         Me.btnBuscar.Location = New System.Drawing.Point(327, 28)
@@ -150,23 +134,37 @@ Partial Class formProducto
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
-        'dgvCliente
+        'txtBuscar
         '
-        Me.dgvCliente.AllowUserToAddRows = False
-        Me.dgvCliente.AllowUserToDeleteRows = False
-        Me.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCliente.Location = New System.Drawing.Point(12, 308)
-        Me.dgvCliente.Name = "dgvCliente"
-        Me.dgvCliente.ReadOnly = True
-        Me.dgvCliente.Size = New System.Drawing.Size(552, 199)
-        Me.dgvCliente.TabIndex = 6
+        Me.txtBuscar.Location = New System.Drawing.Point(84, 32)
+        Me.txtBuscar.Name = "txtBuscar"
+        Me.txtBuscar.Size = New System.Drawing.Size(213, 20)
+        Me.txtBuscar.TabIndex = 1
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(31, 32)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(40, 13)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Buscar"
+        '
+        'dgvProductos
+        '
+        Me.dgvProductos.AllowUserToAddRows = False
+        Me.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProductos.Location = New System.Drawing.Point(12, 308)
+        Me.dgvProductos.Name = "dgvProductos"
+        Me.dgvProductos.Size = New System.Drawing.Size(552, 199)
+        Me.dgvProductos.TabIndex = 6
         '
         'formProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(601, 525)
-        Me.Controls.Add(Me.dgvCliente)
+        Me.Controls.Add(Me.dgvProductos)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "formProducto"
@@ -175,7 +173,7 @@ Partial Class formProducto
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.dgvCliente, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -192,5 +190,5 @@ Partial Class formProducto
     Friend WithEvents btnBuscar As Button
     Friend WithEvents txtBuscar As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents dgvCliente As DataGridView
+    Friend WithEvents dgvProductos As DataGridView
 End Class
