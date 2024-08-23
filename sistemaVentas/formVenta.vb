@@ -83,4 +83,5 @@ Public Class formVenta
         txtTotal.Text = ""
         txtCantidad.Text = ""
     End Sub
+
 End Class

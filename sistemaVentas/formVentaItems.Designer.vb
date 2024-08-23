@@ -22,20 +22,20 @@ Partial Class formVentaItems
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dvgVentas = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.txtCliente = New System.Windows.Forms.TextBox()
+        Me.btnBuscarVenta = New System.Windows.Forms.Button()
+        CType(Me.dvgVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'dvgVentas
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 77)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(561, 356)
-        Me.DataGridView1.TabIndex = 0
+        Me.dvgVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dvgVentas.Location = New System.Drawing.Point(12, 77)
+        Me.dvgVentas.Name = "dvgVentas"
+        Me.dvgVentas.Size = New System.Drawing.Size(476, 196)
+        Me.dvgVentas.TabIndex = 0
         '
         'Label1
         '
@@ -46,41 +46,41 @@ Partial Class formVentaItems
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Buscar venta por cliente"
         '
-        'TextBox1
+        'txtCliente
         '
-        Me.TextBox1.Location = New System.Drawing.Point(141, 22)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(196, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.txtCliente.Location = New System.Drawing.Point(141, 22)
+        Me.txtCliente.Name = "txtCliente"
+        Me.txtCliente.Size = New System.Drawing.Size(196, 20)
+        Me.txtCliente.TabIndex = 2
         '
-        'Button1
+        'btnBuscarVenta
         '
-        Me.Button1.Location = New System.Drawing.Point(364, 18)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(65, 27)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnBuscarVenta.Location = New System.Drawing.Point(364, 18)
+        Me.btnBuscarVenta.Name = "btnBuscarVenta"
+        Me.btnBuscarVenta.Size = New System.Drawing.Size(65, 27)
+        Me.btnBuscarVenta.TabIndex = 3
+        Me.btnBuscarVenta.Text = "Buscar"
+        Me.btnBuscarVenta.UseVisualStyleBackColor = True
         '
         'formVentaItems
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(585, 469)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.ClientSize = New System.Drawing.Size(520, 343)
+        Me.Controls.Add(Me.btnBuscarVenta)
+        Me.Controls.Add(Me.txtCliente)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dvgVentas)
         Me.Name = "formVentaItems"
         Me.Text = "formVentaItems"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dvgVentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dvgVentas As DataGridView
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents txtCliente As TextBox
+    Friend WithEvents btnBuscarVenta As Button
 End Class

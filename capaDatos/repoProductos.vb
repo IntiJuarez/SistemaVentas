@@ -28,6 +28,30 @@ Public Class repoProductos
         Return listaProductos
     End Function
 
+
+    Public Function obtenerProductoPorId(idProducto As Integer) As Productos
+        Dim producto As New Productos()
+
+        Using con As New SqlConnection(connectionString)
+            Dim consulta As String = "SELECT * FROM productos WHERE ID = @ID"
+            Dim comando As New SqlCommand(consulta, con)
+            comando.Parameters.AddWithValue("@ID", idProducto)
+            con.Open()
+            Dim lector As SqlDataReader = comando.ExecuteReader()
+
+            If lector.Read() Then
+                producto.ID = Convert.ToInt32(lector("ID"))
+                producto.Nombre = lector("Nombre").ToString()
+                producto.Precio = Convert.ToDecimal(lector("Precio"))
+                producto.Categoria = lector("Categoria").ToString()
+            End If
+        End Using
+
+        Return producto
+    End Function
+
+
+
     Public Function buscarProductos(filtro As String) As List(Of Productos)
         Dim listaProductos As New List(Of Productos)
 
@@ -64,7 +88,7 @@ Public Class repoProductos
 
     Public Sub actualizarProducto(producto As Productos)
         Using con As New SqlConnection(connectionString)
-            Dim consulta As String = "UPDATE producto SET Nombre = @Nombre, Precio = @Precio, Categoria = @Categoria WHERE ID=@ID"
+            Dim consulta As String = "UPDATE productos SET Nombre = @Nombre, Precio = @Precio, Categoria = @Categoria WHERE ID=@ID"
             Dim comando As New SqlCommand(consulta, con)
             comando.Parameters.AddWithValue("@ID", producto.ID)
             comando.Parameters.AddWithValue("@Nombre", producto.Nombre)

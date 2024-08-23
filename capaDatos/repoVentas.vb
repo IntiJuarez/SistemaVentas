@@ -29,6 +29,29 @@ Public Class repoVentas
         End Using
     End Function
 
+    Public Function buscarVentaPorCliente(nombreCliente As String) As List(Of Ventas)
+        Dim listaVentas As New List(Of Ventas)
+        Using con As New SqlConnection(connectionString)
+            Dim consulta As String = "SELECT v.ID, v.IDCliente, v.Fecha, v.Total, c.Cliente " &
+                "FROM ventas v " & "INNER JOIN clientes c ON v.IDCliente = c.ID WHERE c.Cliente LIKE @nombreCliente"
+            Dim comando As New SqlCommand(consulta, con)
+            comando.Parameters.AddWithValue("nombreCliente", "%" & nombreCliente & "%")
+            con.Open()
+
+            Dim lector As SqlDataReader = comando.ExecuteReader()
+            While lector.Read()
+                Dim venta As New Ventas() With {
+                .ID = Convert.ToInt32(lector("ID")),
+                .IDCliente = Convert.ToInt32(lector("IDCliente")),
+                .Fecha = Convert.ToDateTime(lector("Fecha")),
+                .Total = Convert.ToDouble(lector("Total"))
+                }
+                listaVentas.Add(venta)
+            End While
+        End Using
+        Return listaVentas
+    End Function
+
     Public Function insertarVenta(Venta As Ventas)
         Using con As New SqlConnection(connectionString)
             Dim consulta As String = "INSERT INTO ventas (IDCliente, Fecha, Total) OUTPUT INSERTED.ID VALUES (@IDCliente, @Fecha, @Total)"

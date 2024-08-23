@@ -18,17 +18,25 @@ Public Class servicioProducto
         Return productos.Any(Function(p) p.Nombre = productoNombre)
     End Function
 
+    Public Function obtenerProductoPorId(idProducto As Integer) As Productos
+        Return repositorio.obtenerProductoPorId(idProducto)
+    End Function
+
     Public Sub guardar(productos As Productos)
         'validación'
         If productoExistente(productos.Nombre) Then
             Throw New Exception("Producto existente")
         End If
 
-        If productos.ID = 0 Then
-            repositorio.insertarProducto(productos)
-        Else
-            repositorio.actualizarProducto(productos)
+        repositorio.insertarProducto(productos)
+    End Sub
+
+    Public Sub modificar(producto As Productos)
+        If producto.Precio <= 0 Then
+            Throw New ArgumentException("El precio del producto debe ser mayor que cero.")
+            Return
         End If
+        repositorio.actualizarProducto(producto)
     End Sub
 
     Public Sub eliminar(id As Integer)

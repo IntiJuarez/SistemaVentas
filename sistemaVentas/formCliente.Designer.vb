@@ -35,6 +35,8 @@ Partial Class formCliente
         Me.txtBuscar = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.dgvCliente = New System.Windows.Forms.DataGridView()
+        Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.btnEditar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvCliente, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -42,6 +44,8 @@ Partial Class formCliente
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnEditar)
+        Me.GroupBox1.Controls.Add(Me.btnEliminar)
         Me.GroupBox1.Controls.Add(Me.btnCrear)
         Me.GroupBox1.Controls.Add(Me.txtCorreo)
         Me.GroupBox1.Controls.Add(Me.txtTelefono)
@@ -51,14 +55,14 @@ Partial Class formCliente
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(485, 148)
+        Me.GroupBox1.Size = New System.Drawing.Size(485, 157)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos "
         '
         'btnCrear
         '
-        Me.btnCrear.Location = New System.Drawing.Point(327, 87)
+        Me.btnCrear.Location = New System.Drawing.Point(84, 131)
         Me.btnCrear.Name = "btnCrear"
         Me.btnCrear.Size = New System.Drawing.Size(70, 20)
         Me.btnCrear.TabIndex = 6
@@ -123,7 +127,7 @@ Partial Class formCliente
         Me.GroupBox2.Size = New System.Drawing.Size(485, 85)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "GroupBox2"
+        Me.GroupBox2.Text = "Buscador"
         '
         'btnBuscar
         '
@@ -155,17 +159,35 @@ Partial Class formCliente
         Me.dgvCliente.AllowUserToAddRows = False
         Me.dgvCliente.AllowUserToDeleteRows = False
         Me.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvCliente.Location = New System.Drawing.Point(12, 277)
+        Me.dgvCliente.Location = New System.Drawing.Point(12, 266)
         Me.dgvCliente.Name = "dgvCliente"
         Me.dgvCliente.ReadOnly = True
-        Me.dgvCliente.Size = New System.Drawing.Size(552, 199)
+        Me.dgvCliente.Size = New System.Drawing.Size(485, 223)
         Me.dgvCliente.TabIndex = 3
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Location = New System.Drawing.Point(197, 131)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(70, 20)
+        Me.btnEliminar.TabIndex = 7
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
+        '
+        'btnEditar
+        '
+        Me.btnEditar.Location = New System.Drawing.Point(307, 131)
+        Me.btnEditar.Name = "btnEditar"
+        Me.btnEditar.Size = New System.Drawing.Size(70, 20)
+        Me.btnEditar.TabIndex = 8
+        Me.btnEditar.Text = "Modificar"
+        Me.btnEditar.UseVisualStyleBackColor = True
         '
         'formCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(593, 540)
+        Me.ClientSize = New System.Drawing.Size(531, 547)
         Me.Controls.Add(Me.dgvCliente)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -192,4 +214,6 @@ Partial Class formCliente
     Friend WithEvents Label4 As Label
     Friend WithEvents dgvCliente As DataGridView
     Friend WithEvents btnBuscar As Button
+    Friend WithEvents btnEditar As Button
+    Friend WithEvents btnEliminar As Button
 End Class

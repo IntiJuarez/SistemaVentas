@@ -25,7 +25,17 @@ Public Class servicioCliente
         End If
     End Sub
 
+    Public Function obtenerClientePorId(idCliente As Integer) As Clientes
+        Return repositorio.obtenerClientePorId(idCliente)
+    End Function
+
     Public Sub modificar(cliente As Clientes)
+        'validar id'
+        If cliente.ID <= 0 Then
+            Throw New ArgumentException("El ID no es válido.")
+        Else
+            repositorio.actualizarCliente(cliente)
+        End If
 
     End Sub
 

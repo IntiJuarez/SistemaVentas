@@ -51,6 +51,29 @@ Public Class repoClientes
         Return listaClientes
     End Function
 
+    Public Function obtenerClientePorId(idCliente As Integer) As Clientes
+        Dim cliente As New Clientes()
+
+        Using con As New SqlConnection(connectionString)
+            Dim consulta As String = "SELECT * FROM clientes WHERE ID = @ID"
+            Dim comando As New SqlCommand(consulta, con)
+            comando.Parameters.AddWithValue("@ID", idCliente)
+            con.Open()
+            Dim lector As SqlDataReader = comando.ExecuteReader()
+
+            If lector.Read() Then
+                cliente.ID = Convert.ToInt32(lector("ID"))
+                cliente.Cliente = lector("Cliente").ToString()
+                cliente.Telefono = lector("Telefono").ToString()
+                cliente.Correo = lector("Correo").ToString()
+            End If
+        End Using
+
+        Return cliente
+    End Function
+
+
+
     Public Sub insertarCliente(cliente As Clientes)
 
         Using con As New SqlConnection(connectionString)
@@ -66,7 +89,7 @@ Public Class repoClientes
 
     Public Sub actualizarCliente(cliente As Clientes)
         Using con As New SqlConnection(connectionString)
-            Dim consulta As String = "UPDATE clientes SET Cliente = @Nombre, @Telefono = Telefono, @Correo = Correo WHERE ID = @ID"
+            Dim consulta As String = "UPDATE clientes SET Cliente = @Nombre, Telefono = @Telefono, Correo = @Correo WHERE ID = @ID"
             Dim comando As New SqlCommand(consulta, con)
             comando.Parameters.AddWithValue("@ID", cliente.ID)
             comando.Parameters.AddWithValue("@Nombre", cliente.Cliente)
